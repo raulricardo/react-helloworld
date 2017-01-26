@@ -11,11 +11,29 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <Content />
       </div>
     );
+  }
+}
+
+class Content extends Component {
+  render() {
+    return (
+      <ul className="list">
+        <h3 className="list__title">list title</h3>
+        <li className="list__item">
+          list item
+        </li>
+        <li className="list__item">
+          list item
+        </li>
+        <li className="list__item">
+          list item
+        </li>
+      </ul>
+    )
   }
 }
 
