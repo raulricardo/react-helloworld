@@ -8,11 +8,11 @@ class CharacterList extends React.Component {
     super();
     this.state = {items: []}
   }
-  componentWillMount(){
+  /*componentWillMount(){
     fetch('http://swapi.co/api/people/?format=json')
       .then( response => response.json() )
       .then( ({results: items}) => this.setState({items}))
-  }
+  }*/
   render() {
     let items = this.state.items;
 
