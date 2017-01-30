@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-// import './App.css';
 import './App.scss';
+
+import CharacterList from './components/character_list/character_list';
 
 class App extends Component {
   render() {
@@ -12,28 +13,9 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
 
-        <Content />
+        <CharacterList />
       </div>
     );
-  }
-}
-
-class Content extends Component {
-  render() {
-    return (
-      <ul className="list">
-        <h3 className="list__title">list title</h3>
-        <li className="list__item">
-          list item
-        </li>
-        <li className="list__item">
-          list item
-        </li>
-        <li className="list__item">
-          list item
-        </li>
-      </ul>
-    )
   }
 }
 
