@@ -1,30 +1,23 @@
-import React from 'react';
-
+import React from 'react'
+import { connect } from 'react-redux'
 import './character_list.scss';
 
+const CharacterList = (props) => {
+  return (
+    <ul className="list">
+      <h3 className="list-title">
+        List of characters
+      </h3>
 
-class CharacterList extends React.Component {
-  constructor() {
-    super();
-    this.state = {items: []}
-  }
-  /*componentWillMount(){
-    fetch('http://swapi.co/api/people/?format=json')
-      .then( response => response.json() )
-      .then( ({results: items}) => this.setState({items}))
-  }*/
-  render() {
-    let items = this.state.items;
-
-    return (
-      <ul className="list">
-        <h3 className="list__title">Star Wars Characters</h3>
-
-        {items.map(item =>
-          <li key={item.name}> {item.name} </li>)}
-      </ul>
-    )
-  }
+      {props.characters.map(item =>
+        <li key={item.name}>{item.name}</li>
+      )}
+    </ul>
+  )
 }
 
-export default CharacterList;
+function mapStateToProps(state) {
+  return { characters: state.characters.toJS() }
+}
+
+export default connect(mapStateToProps, null)(CharacterList);

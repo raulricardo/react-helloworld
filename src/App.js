@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.scss'
 
-import CharacterList from './components/character_list/character_list';
+import NewCharacter from './components/new_character/new_character.js'
+import CharacterList from './components/character_list/character_list'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
 
+        <NewCharacter />
         <CharacterList />
       </div>
     );

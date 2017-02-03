@@ -1,4 +1,4 @@
-const SomeCharacter = [
+const InitialCharacters = [
   {
     "name": "Luke Skywalker",
     "height": "172",
@@ -88,4 +88,4 @@ const SomeCharacter = [
   }
 ];
 
-export default SomeCharacter;
+export default InitialCharacters
