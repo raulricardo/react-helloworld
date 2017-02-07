@@ -17,7 +17,7 @@ const CharacterList = (props) => {
 }
 
 function mapStateToProps(state) {
-  return { characters: state.characters.toJS() }
+  return { characters: state.characters.get('charactersList').toJS() }
 }
 
 export default connect(mapStateToProps, null)(CharacterList);
