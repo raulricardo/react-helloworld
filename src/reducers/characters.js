@@ -2,21 +2,21 @@ import Immutable from 'immutable'
 import {
   ADD_CHARACTER,
   SET_NEW_NAME,
-  SET_NEW_SPECIE
+  SET_NEW_SPECIES
 } from '../constants/actionTypes'
 
 const initialState = Immutable.fromJS({
   charactersList: [
     {
       name: 'Luke Skywalker',
-      specie: 'Human'
+      species: 'Human'
     },
     {
       name: 'Leia Organa',
-      specie: 'Human'
+      species: 'Human'
     },
   ],
-  formCharacter: { name: 'Defaul name', specie: 'Default Specie'}
+  formCharacter: { name: '', species: ''}
 })
 
 export default function(state = initialState, action) {
@@ -26,15 +26,15 @@ export default function(state = initialState, action) {
         ['charactersList'],
         arr => arr.push({
           name: action.name,
-          specie: action.specie
+          species: action.species
         })
       )
 
     case SET_NEW_NAME:
       return state.setIn(['formCharacter', 'name'], action.name)
 
-    case SET_NEW_SPECIE:
-      return state.setIn(['formCharacter', 'specie'], action.specie)
+    case SET_NEW_SPECIES:
+      return state.setIn(['formCharacter', 'species'], action.species)
 
     default:
       return state

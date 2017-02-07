@@ -1,13 +1,14 @@
+/* Action creators */
 import * as types from '../constants/actionTypes'
 
-export const addCharacter = (name, specie) => ({
-  type: types.ADD_CHARACTER, name, specie
+export const addCharacter = (name, species) => ({
+  type: types.ADD_CHARACTER, name, species
 })
 
 export const setNewName = name => ({
   type: types.SET_NEW_NAME, name
 })
 
-export const setNewSpecie = specie => ({
-  type: types.SET_NEW_SPECIE, specie
+export const setNewSpecies = species => ({
+  type: types.SET_NEW_SPECIES, species
 })

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import {
   addCharacter,
   setNewName,
-  setNewSpecie } from '../../actions/'
+  setNewSpecies } from '../../actions/'
 
 import './new_character.scss'
 
@@ -14,8 +14,8 @@ const NewCharacter = (props) => {
       case 'character-name':
         props.setNewName(e.target.value)
         return
-      case 'character-specie':
-        props.setNewSpecie(e.target.specie)
+      case 'character-species':
+        props.setNewSpecies(e.target.value)
         return
       default:
         return
@@ -25,9 +25,8 @@ const NewCharacter = (props) => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (props.character.name && props.character.specie) {
-      props.addCharacter(props.character.name, props.character.specie);
-      // e.target.reset()
+    if (props.character.name && props.character.species) {
+      props.addCharacter(props.character.name, props.character.species);
     }
   }
 
@@ -44,11 +43,11 @@ const NewCharacter = (props) => {
           onChange={handleInputChange}/>
         <br/>
 
-        <label htmlFor="">Specie</label>
+        <label htmlFor="">Species</label>
         <input
           type="text"
-          name="character-specie"
-          value={props.character.specie}
+          name="character-species"
+          value={props.character.species}
           onChange={handleInputChange}/>
 
         <button type="submit">Add</button>
@@ -62,7 +61,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addCharacter, setNewName, setNewSpecie }, dispatch)
+  return bindActionCreators({ addCharacter, setNewName, setNewSpecies }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewCharacter);
